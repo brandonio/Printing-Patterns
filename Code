@@ -1,0 +1,233 @@
+/**
+ * This is a class to print out some asterisks patterns.  
+ * See patterns below for examples of what should be printed.  
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class AsteriksPrinting {
+    public static void main(String [] args) {
+        for (int i = 0; i < 20; i++) {
+            System.out.println();
+        }
+        
+        //pattern0(6);
+        //pattern1(5);
+        //pattern2(7);
+        //pattern3(10);
+        //pattern4(6);
+        pattern5(3);
+        //pattern6(2);
+         
+        //pattern7(3);
+    }
+
+    /**
+     * Prints out a pattern with size based on n
+     * 
+     * @param n a parameter to control the size of the shape
+     */
+    public static void pattern0(int n) {
+        start();
+        System.out.println("Pattern 0 with input of " + n + ".\n");
+        for (int i = 0; i < n; i++) {
+            printStar();
+        }
+    }
+
+    /**
+     * Prints out a pattern with size based on n
+     * 
+     * @param n a parameter to control the size of the shape
+     */
+    public static void pattern1(int n) {
+        start();
+        System.out.println("Pattern 1 with input of " + n + ".\n");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                printStar();
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Prints out a pattern with size based on n
+     * 
+     * @param n a parameter to control the size of the shape
+     */
+    public static void pattern2(int n) {
+        start();
+        System.out.println("Pattern 2 with input of " + n + ".\n");
+        for (int i = 0; i < n; i++) {
+            for (int k = 0; k <= i; k++) {
+                printStar();
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Prints out a pattern with size based on n
+     * 
+     * @param n a parameter to control the size of the shape
+     */
+    public static void pattern3(int n) {
+        start();
+        System.out.println("Pattern 3 with input of " + n + ".\n");
+        int z = n;    
+        for (int i = 0; i < n; i++) {
+            z--;
+            for (int x = 0; x <= i; x++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j <= z; j++) {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    /**
+     * Prints out a pattern with size based on n
+     * 
+     * @param n a parameter to control the size of the shape
+     */
+    public static void pattern4(int n) {
+        start();
+        System.out.println("Pattern 4 with input of " + n + ".\n");
+        int q = n;
+        int z = 0;
+        for (int i = 0; i < n; i++) {
+            q--;
+            z++;
+            for (int j = 0; j < q; j++) {
+                System.out.print(" ");
+            }
+            for (int x = 0; x < z; x++) {
+                System.out.print("**");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Prints out a pattern with size based on n
+     * 
+     * @param n a parameter to control the size of the shape
+     */
+    public static void pattern5(int n) {
+        start();
+        System.out.println("Pattern 5 with input of " + n + ".\n");
+        int z = n;
+        z *= 3;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < z; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int q = 0; q < 3; q++){
+            for (int k = 0; k < n; k++) {
+                System.out.print("*");
+            }
+            for (int b = 0; b < n; b++) {
+                System.out.print(" ");
+            }
+            for (int l = 0; l < n; l++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int w = 0; w < 3; w++) {
+            for (int r = 0; r < z; r++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Prints out a pattern with size based on n
+     * 
+     * @param n a parameter to control the size of the shape
+     */
+    public static void pattern6(int n) {
+        start();
+        System.out.println("Pattern 6 with input of " + n + ".\n");
+
+        /*
+         * n = 2
+         * z = 5
+         * w = 3
+         * x = 9
+         * y = 7
+         */
+
+        int z = n*2 + 1;
+        int w = z - n;
+        int x = z + 2*n;  
+        int y = x - n;
+        for (int t = 0; t < n; t++) {
+            for (int k = 0; k < n; k++) {
+                System.out.print("*");
+            }
+            for (int h = n; ((h >= n) && (h < y)) ; h++) {
+                System.out.print(" ");
+            }
+            for (int l = 0; l < n; l++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int t = 0; t < z; t++) {
+            for (int h = 0; h < n ; h++) {
+                System.out.print(" ");
+            }
+            for (int k = n; ((k >= n) && (k < y)); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int t = 0; t < n; t++) {
+            for (int k = 0; k < n; k++) {
+                System.out.print("*");
+            }
+            for (int h = n; ((h >= n) && (h < y)) ; h++) {
+                System.out.print(" ");
+            }
+            for (int l = 0; l < n; l++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    
+    
+
+    /**
+     * Prints a single asterisk
+     */
+    public static void printStar() {
+        System.out.print("*");
+    }
+
+    /**
+     * Prints a single space
+     */
+    public static void printSpace() {
+        System.out.print(" ");
+    }
+
+    /**
+     * Prints a single newline
+     */
+    public static void printNewline() {
+        System.out.print("\n");
+    }
+
+    public static void start() {
+        System.out.print("\n\n----------Program Starting-----------\n");
+    }
+}
